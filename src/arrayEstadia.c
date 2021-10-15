@@ -15,48 +15,6 @@ void inicializarGuarderia (sEstadiaDiaria* lista,int max) {
 	}
 }
 
-int bajaEstadia (sEstadiaDiaria* lista,int max) {
-	int retorno=-1;
-	int i;
-	int seguir=1;
-
-	while (seguir==1) {
-		i=buscarEstadiaID(lista,"Ingrese el ID que desea eliminar: ","ERROR. Ingresaste un valor no valido. Intente nuevamente: ",max);
-
-		if (i==-1) {
-			printf ("ERROR. No se ha encontrado algun ID a eliminar. Chequee la lista y vuelva a intentar");
-			return retorno;
-		}
-		else {
-			printUnaEstadia (lista,i);
-			printf ("Desea eliminar esta estadia? 0= SI 1= NO -1= SALIR: ");
-			fflush (stdin);
-			scanf ("%d",&seguir);
-
-			while (seguir!=-1 && seguir!=0 && seguir!=1) {
-				printf ("ERROR. Ingrese un caracter valido: ");
-				fflush (stdin);
-				scanf ("%d",&seguir);
-			}
-
-			switch (seguir) {
-				case -1:
-					printf ("SALIENDO.....\n\n");
-					break;
-				case 0:
-					lista[i].estaVacio=VACIO;
-					retorno=0;
-					printf("Se elimino exitosamente la estadia\n\n");
-					break;
-				case 1:
-					printf ("Vaciando los datos cargados.....\n\n");
-					break;
-			}
-		}
-	}
-	return retorno;
-}
-
 void ordenarEstadias(sEstadiaDiaria* lista, int max) {
 	int i;
 	int limit;
@@ -122,7 +80,7 @@ int buscarEstadiaID(sEstadiaDiaria* lista,char* mensajeBuscarID,char* mensajeErr
 			}
 		}
 		if (retorno==-1) {
-				printf ("ERROR. El ID que has ingresado no fue registrado. Intente nuevamente: ");
+				printf ("ERROR. El ID que has ingresado no fue registrado. Intente nuevamente\n");
 		}
 	}
 
@@ -130,7 +88,7 @@ int buscarEstadiaID(sEstadiaDiaria* lista,char* mensajeBuscarID,char* mensajeErr
 }
 
 void printUnaEstadia (sEstadiaDiaria* registroEstadia,int i) {
-	printf ("%-10d %-25s %-25d %-25d",registroEstadia[i].id,registroEstadia[i].nombreDuenio,registroEstadia[i].telefonoContacto,registroEstadia[i].idPerro);
+	printf ("%-10d %-25s %-25d %-25d",registroEstadia[i].id,registroEstadia[i].nombreDuenio,registroEstadia[i].telefonoDuenio,registroEstadia[i].idPerro);
 	mostrarFecha(registroEstadia[i].fecha);
 }
 

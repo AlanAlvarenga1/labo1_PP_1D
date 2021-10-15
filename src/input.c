@@ -7,7 +7,7 @@
 
 #include "input.h"
 
-int tomarInt (char* mensajeInicio,char* mensajeError,int min, int max) {
+int tomarInt (char* mensajeInicio,char* mensajeError,long int min,int max) {
 	int numero;
 	int checkVar;
 
@@ -50,7 +50,7 @@ void tomarString (char* mensajeInicio,char* mensajeError, char* string, int tamC
     }
 }
 
-float tomarFloat (char* mensajeInicio,char* mensajeError,int min, int max) {
+float tomarFloat (char* mensajeInicio,char* mensajeError,long int min,int max) {
 	float numero;
 	float checkVar;
 

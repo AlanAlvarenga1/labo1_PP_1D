@@ -11,19 +11,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+
 #include "input.h"
 
-#define maxChar 21
-#define maxPerros 500
-
-#define VACIO 0
-#define OCUPADO 1
 
 typedef struct {
 	int id;
 	char nombre[maxChar];
 	char raza[maxChar];
 	int edad;
+	int cantEstadias;
+	int listaEstadias[10];
 	int estaVacio;
 }sPerro;
 
@@ -56,7 +54,6 @@ void hardCodearPerros (sPerro* lista, int cantHardcodear,int* cuentaPerros,int* 
  * @param ultimoID Ultimo ID ingresado de un perro
  * @return Retorna -1 si la funcion no se realizo con exito. Y retorna 0 si se realizo con exito
  */
-//int registrarPerro (sPerro *listaPerros,int lenChar,int lenPerros,int ultimoID);
 /**
  * @fn void listarPerros(sPerro*, int)
  * @brief Muestra la lista de perros registrados
@@ -83,6 +80,14 @@ int buscarPerroID(sPerro* lista,char* mensajeBuscarID,char* mensajeError, int ma
  * @param lista Lista de perros
  * @param i Posicion del perro a imprimir
  */
-//void printUnPerro (sPerro* lista,int i);
+void ordenarPerrosPorEstadias (sPerro* lista,int max);
+/**
+ * @fn void printUnPerro(sPerro*, int)
+ * @brief Imprime un solo perro
+ *
+ * @param lista Lista de perros
+ * @param i posicion del perro a imprimir
+ */
+void printUnPerro (sPerro* lista,int i);
 
 #endif /* ARRAY_H_ */

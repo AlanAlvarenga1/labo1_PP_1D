@@ -16,9 +16,11 @@ void mostrarMenu (int* opciones) {
 			"4) Listar estadia\n"
 			"5) Listar perros\n"
 			"6) Promediar edad de los perros\n"
-			"7) Salir del programa\n\n");
+			"7) Listar el perro con mas estadias\n"
+			"8) Listado de perros con sus estadias\n"
+			"9) Salir del programa\n\n");
 
-			*opciones= tomarInt ("Ingrese la opcion que deseas utilizar: ","ERROR. Has ingresado una opcion incorrecta. 1-7: ",1, 7);
+			*opciones= tomarInt ("Ingrese la opcion que deseas utilizar: ","ERROR. Has ingresado una opcion incorrecta. 1-7: ",1, 9);
 }
 
 void subMenuModificacionEstadia(int* opciones,int id) {

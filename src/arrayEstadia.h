@@ -11,13 +11,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+
 #include "menu.h"
-
-#define maxChar 21
-#define maxEstadias 500
-
-#define VACIO 0
-#define OCUPADO 1
+#include "input.h"
 
 typedef struct {
 	int dia;
@@ -27,9 +23,12 @@ typedef struct {
 
 typedef struct {
 	int id;
-	char nombreDuenio[maxChar];
-	int telefonoContacto;
+	int idDuenio;
+	int telefonoDuenio;
+	char nombreDuenio[maxCharDuenios];
+	int iDuenio;
 	int idPerro;
+	int iPerro;
 	sCalendario fecha;
 	int estaVacio;
 }sEstadiaDiaria;
@@ -41,15 +40,6 @@ typedef struct {
  * @param max Numero maximo de arrays en la estructura de estadias
  */
 void inicializarGuarderia (sEstadiaDiaria* lista,int max);
-/**
- * @fn int bajaEstadia(sEstadiaDiaria*, int)
- * @brief Baja logicamente una estadia ya ocupada
- *
- * @param lista Estructura de estadia
- * @param max  Numero maximo de arrays en la estructura de estadias
- * @return retorna si se realizo exitosamente la funcion 0=SI -1=NO
- */
-int bajaEstadia (sEstadiaDiaria* lista,int max);
 /**
  * @fn void ordenarEstadias(sEstadiaDiaria*, int)
  * @brief Ordena por fecha o por nombre la lista de las estadias

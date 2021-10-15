@@ -11,6 +11,7 @@ void inicializarPerros (sPerro* lista,int max) {
 	int i;
 
 	for (i=0;i<max;i++) {
+		lista[i].cantEstadias=0;
 		lista[i].estaVacio=VACIO;
 	}
 }
@@ -121,6 +122,27 @@ int buscarPerroID(sPerro* lista,char* mensajeBuscarID,char* mensajeError, int ma
 	return retorno;
 }
 
-/*void printUnPerro (sPerro* lista,int i) {
-	printf ("%-10d %-25s %-25s %-25d",lista[i].id,lista[i].nombre,lista[i].raza,lista[i].edad);
-}*/
+void ordenarPerrosPorEstadias (sPerro* lista, int max) {
+	int i;
+	int limit;
+	int flagSwap;
+	sPerro aux;
+
+	limit=max-1;
+		do {
+			flagSwap=0;
+			for (i=0;i<limit;i++) {
+				if (lista[i].cantEstadias<lista[i+1].cantEstadias) {
+					aux=lista[i];
+					lista[i]=lista[i+1];
+					lista[i+1]=aux;
+					flagSwap=1;
+				}
+			}
+			limit--;
+		}while (flagSwap);
+}
+
+void printUnPerro (sPerro* lista,int i) {
+	printf ("%-10d %-25s %-25s %-25d %d\n",lista[i].id,lista[i].nombre,lista[i].raza,lista[i].edad,lista[i].cantEstadias);
+}

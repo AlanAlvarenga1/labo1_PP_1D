@@ -13,11 +13,21 @@
 #include <string.h>
 #include <ctype.h>
 
+#define maxChar 21
+#define maxCharDuenios 41
+#define maxEstadias 500
+#define maxPerros 500
+#define maxDuenios 500
+
+#define VACIO 0
+#define OCUPADO 1
+
+
 #include "arrayPerro.h"
 #include "arrayEstadia.h"
 
 /**
- * @fn int tomarInt(char*, char*, int, int)
+ * @fn int tomarInt(char*, char*,long int,long int)
  * @brief Funcion que sirve para tomar un entero
  *
  * @param mensajeInicio Mensaje mostrado al inicio de la funcion
@@ -26,7 +36,7 @@
  * @param max Numero maximo solicitado
  * @return Devuelve el numero ingresado
  */
-int tomarInt (char* mensajeInicio,char* mensajeError,int min, int max);
+int tomarInt (char* mensajeInicio,char* mensajeError,long int min,int max);
 
 /**
  * @fn void tomarString(char*, char*, char*, int)
@@ -39,7 +49,7 @@ int tomarInt (char* mensajeInicio,char* mensajeError,int min, int max);
  */
 void tomarString (char* mensajeInicio,char* mensajeError, char* string, int tamChar);
 /**
- * @fn float tomarFloat(char*, char*, int, int)
+ * @fn float tomarFloat(char*, char*,long int,long int)
  * @brief Funcion que sirve para tomar un flotante
  *
  * @param mensajeInicio Mensaje mostrado al inicio de la funcion
@@ -48,6 +58,6 @@ void tomarString (char* mensajeInicio,char* mensajeError, char* string, int tamC
  * @param max Numero maximo solicitado
  * @return Devuelve el numero ingresado
  */
-float tomarFloat (char* mensajeInicio,char* mensajeError,int min, int max);
+float tomarFloat (char* mensajeInicio,char* mensajeError,long int min,int max);
 
 #endif /* INPUT_H_ */
