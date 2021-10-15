@@ -47,6 +47,17 @@ void inicializarPerros (sPerro* lista,int max);
  */
 void hardCodearPerros (sPerro* lista, int cantHardcodear,int* cuentaPerros,int* sumaEdades,int* idFinal);
 /**
+ * @fn int registrarEstadia(sPerro*, int, int, int*)
+ * @brief Esta funcion permite registrar perros
+ *
+ * @param listaPerros Es la lista que contiene a los perros registrados
+ * @param lenChar Tamaño maximo de caracteres de un char
+ * @param lenPerros Tamaño maximo de perros que se pueden registrar
+ * @param ultimoID Ultimo ID ingresado de un perro
+ * @return Retorna -1 si la funcion no se realizo con exito. Y retorna 0 si se realizo con exito
+ */
+//int registrarPerro (sPerro *listaPerros,int lenChar,int lenPerros,int ultimoID);
+/**
  * @fn void listarPerros(sPerro*, int)
  * @brief Muestra la lista de perros registrados
  *
@@ -65,5 +76,13 @@ void listarPerros (sPerro* lista, int max);
  * @return
  */
 int buscarPerroID(sPerro* lista,char* mensajeBuscarID,char* mensajeError, int max);
+/**
+ * @fn void printUnPerro(sPerro*, int)
+ * @brief Imprime en pantalla un perro
+ *
+ * @param lista Lista de perros
+ * @param i Posicion del perro a imprimir
+ */
+//void printUnPerro (sPerro* lista,int i);
 
 #endif /* ARRAY_H_ */

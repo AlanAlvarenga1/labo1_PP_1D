@@ -40,6 +40,54 @@ void hardCodearPerros (sPerro *lista, int cantHardcodear,int* cuentaPerros,int* 
 	*idFinal=id[i];
 }
 
+/*int registrarUnPerro (sPerro *listaPerros,int lenChar,int lenPerros,int ultimoID) {
+	int retorno=-1;
+	int i=0;
+	int flag=0;
+	int seguir=1;
+
+	while (flag==0 && i<lenPerros) {
+		if (listaPerros[i].estaVacio==VACIO) {
+			flag=1;
+		}
+		else {
+			i++;
+		}
+	}
+	if (flag==1) {
+		while (seguir==1) {
+			listaPerros[i].id=ultimoID+1;
+			tomarString ("Ingrese el nombre del dueño del perro: ","ERROR. Has ingresado un caracter invalido. Intente nuevamente: ", listaPerros[i].nombre, lenChar);
+			tomarString ("Ingrese el nombre de la raza del perro: ","ERROR. Has ingresado un caracter invalido. Intente nuevamente: ", listaPerros[i].raza, lenChar);
+			listaPerros[i].edad=tomarInt ("Ingrese la edad del perro: ","ERROR. Has ingresado un numero invalido. Intente nuevamente: ",0, 20);
+
+			printf ("%-10s %-25s %-25s %s","ID","Nombre del perro","Raza del perro","Edad del perro\n");
+			printUnPerro (listaPerros,i);
+
+			seguir=tomarInt ("¿Los datos cargados son correctos?. 0=SI 1=NO -1=SALIR: ","ERROR. Ingrese un caracter valido: ",-1, 1);
+
+			switch (seguir) {
+				case -1:
+					printf ("SALIENDO.....\n\n");
+					break;
+				case 0:
+					listaPerros[i].estaVacio=OCUPADO;
+					retorno=0;
+					printf("Se registro exitosamente el perro\n\n");
+					break;
+				case 1:
+					printf ("Vaciando los datos cargados.....\n\n");
+					break;
+			}
+		}
+	}
+	else {
+		printf ("ERROR. No hay espacios disponibles");
+	}
+	return retorno;
+}*/
+
+
 void listarPerros (sPerro* lista, int max) {
 	int i;
 
@@ -72,3 +120,7 @@ int buscarPerroID(sPerro* lista,char* mensajeBuscarID,char* mensajeError, int ma
 
 	return retorno;
 }
+
+/*void printUnPerro (sPerro* lista,int i) {
+	printf ("%-10d %-25s %-25s %-25d",lista[i].id,lista[i].nombre,lista[i].raza,lista[i].edad);
+}*/
